@@ -1,12 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromBookmark } from "../redux/action";
 
+import '../styles.css'
+import { useLocation } from "react-router-dom";
 
 const Bookmark = () => {
 
   const bookmarks = JSON.parse(localStorage.getItem("bookmarks")).bookmarks;
   console.log(bookmarks);
   const dispatch = useDispatch();
+
   const removeBookmark = (bookmarkId) => {
     dispatch(removeFromBookmark(bookmarkId));
   };
@@ -15,8 +18,8 @@ const Bookmark = () => {
 
       <ul>
         {bookmarks && bookmarks.map((element) => (
-          <div className="card col-10 mx-auto mt-3" key={element._id}>
-            <div className="card-body">
+          <div className="card col-10 mx-auto mt-3 p-5 rad-30 quoteBox text-white" key={element._id}>
+            <div className="card-body ">
 
               <p className="card-text">{element.content}</p>
               <p className="card-title mx-auto col-3">- {element.author}</p>
@@ -29,7 +32,7 @@ const Bookmark = () => {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  className="bi bi-trash"
+                  className="bi bi-trash "
                   viewBox="0 0 16 16"
                 >
                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />

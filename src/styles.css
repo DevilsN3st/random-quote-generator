@@ -1,0 +1,21 @@
+.quoteBox{
+    background: #D05252;
+}
+.rad-30{
+    border-radius: 30px;
+}
+.pos-abs{
+    position : absolute;
+}
+.book-del{
+    left: 12.5%;
+    right: 12.5%;
+    top: 0%;
+    bottom: 0%;
+}
+.p{
+    color: white;
+}
+body {
+    background: linear-gradient(to right, #4c56b7, #875dc5);
+}
