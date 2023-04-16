@@ -5,7 +5,9 @@ import Navbar from './components/Navbar';
 
 const App = () => {
 
-    localStorage.setItem("bookmarks", JSON.stringify({bookmarks:[]}));
+    const bookmarks = localStorage.getItem('bookmarks');
+
+    if(bookmarks === null) localStorage.setItem("bookmarks", JSON.stringify({bookmarks:[]}));
   return (
     <>
         <BrowserRouter>
